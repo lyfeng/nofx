@@ -12,6 +12,8 @@ ARG NGINX_VERSION=alpine
 # Build Stage (Node)
 # ──────────────────────────────────────────────────────────────
 FROM node:${NODE_VERSION} AS builder
+ENV http_proxy=http://127.0.0.1:8118 \
+    https_proxy=http://127.0.0.1:8118
 WORKDIR /build
 
 COPY web/package*.json ./

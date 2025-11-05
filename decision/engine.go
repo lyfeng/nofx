@@ -118,6 +118,10 @@ func GetFullDecisionWithCustomPrompt(ctx *Context, mcpClient *mcp.Client, custom
 		return nil, fmt.Errorf("调用AI API失败: %w", err)
 	}
 
+	fmt.Println("----------- AI Response -----------")
+	fmt.Println(aiResponse)
+	fmt.Println("---------------------------------")
+
 	// 4. 解析AI响应
 	decision, err := parseFullDecisionResponse(aiResponse, ctx.Account.TotalEquity, ctx.BTCETHLeverage, ctx.AltcoinLeverage)
 	if err != nil {

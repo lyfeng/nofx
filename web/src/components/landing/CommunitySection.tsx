@@ -2,15 +2,15 @@ import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
 
 interface CardProps {
-  quote: string
-  author: string
-  handle?: string
-  avatarUrl?: string
-  tweetUrl?: string
-  delay?: number
+  quote: string;
+  authorName: string;
+  handle: string;
+  avatarUrl: string;
+  tweetUrl: string;
+  delay: number;
 }
 
-function TestimonialCard({ quote, author, delay }: CardProps) {
+function TestimonialCard({ quote, authorName, delay }: CardProps) {
   return (
     <motion.div
       className='p-6 rounded-xl'
@@ -27,7 +27,7 @@ function TestimonialCard({ quote, author, delay }: CardProps) {
       <div className='flex items-center gap-2'>
         <div className='w-8 h-8 rounded-full' style={{ background: 'var(--binance-yellow)' }} />
         <span className='text-sm font-semibold' style={{ color: 'var(--text-secondary)' }}>
-          {author}
+          {authorName}
         </span>
       </div>
     </motion.div>
@@ -42,7 +42,7 @@ export default function CommunitySection() {
     {
       quote:
         '前不久非常火的 AI 量化交易系统 NOF1，在 GitHub 上有人将其复刻并开源，这就是 NOFX 项目。基于 DeepSeek、Qwen 等大语言模型，打造的通用架构 AI 交易操作系统，完成了从决策、到交易、再到复盘的闭环。GitHub: https://github.com/NoFxAiOS/nofx',
-      author: 'Michael Williams',
+      authorName: 'Michael Williams',
       handle: '@MichaelWil93725',
       avatarUrl:
         'https://pbs.twimg.com/profile_images/1767615411594694659/Mj8Fdt6o_400x400.jpg',
@@ -53,7 +53,7 @@ export default function CommunitySection() {
     {
       quote:
         '跑了一晚上 @nofx_ai 开源的 AI 自动交易，太有意思了，就看 AI 在那一会开空一会开多，一顿操作，虽然看不懂为什么，但是一晚上帮我赚了 6% 收益',
-      author: 'DIŸgöd',
+      authorName: 'DIŸgöd',
       handle: '@DIYgod',
       avatarUrl:
         'https://pbs.twimg.com/profile_images/1628393369029181440/r23HDDJk_400x400.jpg',
@@ -63,7 +63,7 @@ export default function CommunitySection() {
     {
       quote:
         'Open-source NOFX revives the legendary Alpha Arena, an AI-powered crypto futures battleground. Built on DeepSeek/Qwen AI, it trades live on Binance, Hyperliquid, and Aster DEX, featuring multi-AI battles and self-learning bots',
-      author: 'Kai',
+      authorName: 'Kai',
       handle: '@hqmank',
       avatarUrl:
         'https://pbs.twimg.com/profile_images/1905441261911506945/4YhLIqUm_400x400.jpg',

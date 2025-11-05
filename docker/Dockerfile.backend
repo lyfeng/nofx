@@ -6,7 +6,7 @@
 # Versions extracted as ARGs for maintainability
 # ═══════════════════════════════════════════════════════════════
 
-ARG GO_VERSION=1.23.0-alpine
+ARG GO_VERSION=1.25.0-alpine
 ARG ALPINE_VERSION=latest
 ARG TA_LIB_VERSION=0.4.0
 
@@ -42,8 +42,8 @@ FROM golang:${GO_VERSION} AS backend-builder
 
 RUN apk update && apk add --no-cache git make gcc g++ musl-dev
 
-# Enable GOTOOLCHAIN to allow Go to download required toolchain
-ENV GOTOOLCHAIN=auto
+# Use specific Go version to avoid toolchain downloads
+ENV GOTOOLCHAIN=local
 
 COPY --from=ta-lib-builder /usr/local /usr/local
 
